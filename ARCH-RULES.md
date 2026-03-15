@@ -769,3 +769,175 @@ Previous slide update:
 
 [⬅️ Previous: Vector Addition](./01_vector_addition.ipynb) | [Next: Dot Product ➡️](./03_vector_dot_product.ipynb)
 ```
+
+---
+
+## **10. CONCEPT CROSS-REFERENCING AND NOTEBOOK WRITING STYLE (NON-NEGOTIABLE)**
+
+Notebooks should include **natural references to related concepts** that exist elsewhere in the repository. Explanations must be **author-neutral, concept-centered, and pedagogically direct**.
+
+### **10.1. Purpose**
+
+- Improve conceptual navigation across the curriculum.
+- Help readers move between prerequisite and advanced concepts.
+- Maintain a coherent conceptual graph across the repository.
+
+### **10.2. Cross-Referencing Guidelines**
+
+- References must appear **naturally within the explanation**.
+- Do **not force references** just to create links.
+- Only link concepts that are **meaningfully used in the explanation**.
+- Avoid listing references without context.
+- Prefer links embedded in explanatory text.
+- Do not overlink foundational concepts that are obvious or unrelated to the immediate explanation.
+
+### **10.3. Link Format**
+
+Use standard relative notebook links:
+
+```markdown
+[linear transformation](./01_linear_transformation.ipynb)
+```
+
+### **10.4. Do Not Reference Authors in Explanations**
+
+Notebook explanations must **not directly mention authors or books** when explaining concepts. The notebooks teach the concept itself, not how a particular author introduces it.
+
+**Bad:**
+
+```markdown
+Fleisch begins Chapter 4 with the change in vector components caused by rotating the coordinate axes.
+```
+
+```markdown
+Savov defines this concept as the transformation of coordinates between reference frames.
+```
+
+Reason: these statements add no conceptual value and introduce unnecessary author commentary.
+
+**Good:**
+
+```markdown
+When the coordinate axes rotate, the numerical components of a vector change even though the geometric vector itself remains the same.
+```
+
+### **10.5. Do Not Describe the Literature Structure**
+
+Notebooks must **not reference chapters, sections, or how books organize topics**.
+
+**Bad:**
+
+```markdown
+Savov places rotations and reflections under this broader concept.
+```
+
+```markdown
+Fleisch discusses this topic in Chapter 4.
+```
+
+Reason: this is metadata about the book, not part of the mathematical explanation.
+
+### **10.6. Do Not Justify Links Using Author Commentary**
+
+References to other notebooks must **not be introduced through statements about how an author organized the topic**.
+
+**Bad:**
+
+```markdown
+Savov places rotations and reflections under this broader concept, so this notebook links to the matrix representations of [rotations](../06_Linear_Transformations/11_rotation_matrix_representation.ipynb) and [reflections](../06_Linear_Transformations/10_reflection_matrix_representation.ipynb) rather than re-explaining them geometrically.
+```
+
+Reason: the link is justified by discussing the author's organization instead of the concept itself.
+
+**Good:**
+
+```markdown
+Rotations and reflections are specific examples of linear transformations. Their matrix representations are explored in the notebooks on [rotation matrices](../06_Linear_Transformations/11_rotation_matrix_representation.ipynb) and [reflection matrices](../06_Linear_Transformations/10_reflection_matrix_representation.ipynb).
+```
+
+### **10.7. Use Neutral Concept-Driven Explanations**
+
+All explanations must focus on:
+
+- The mathematical idea.
+- The geometric intuition.
+- The algebraic representation.
+- The relationship between concepts.
+
+Avoid meta-discussion about sources.
+
+### **10.8. References to Literature Are Internal Only**
+
+The literature in `Literature/` should guide **content accuracy**, but it must not appear in the explanatory text.
+
+Authors and books may only appear in:
+
+- Repository documentation.
+- Bibliography sections (Cell 7).
+- Reference metadata (if explicitly required).
+
+They must **not appear inside concept explanations**.
+
+### **10.9. Examples of Good Cross-References (Natural Integration)**
+
+**Example 1:**
+
+```markdown
+**Explanation:**
+
+Composing two linear transformations means applying one and then the other. The abstract composition law becomes ordinary matrix multiplication once both transformations are written in matrix form. This depends on the definition of a [linear transformation](./01_linear_transformation.ipynb) and the concept of [matrix representation](./05_matrix_representation.ipynb).
+```
+
+**Example 2:**
+
+```markdown
+**Explanation:**
+
+A change of basis rewrites vectors relative to a new coordinate system. This process is closely tied to the concept of a [basis](./02_basis_definition.ipynb) and to the matrix form of [coordinate transformations](./03_change_of_basis_matrix.ipynb).
+```
+
+**Example 3:**
+
+```markdown
+**Explanation:**
+
+Matrix-vector multiplication can be interpreted geometrically as applying a linear transformation to a vector. This interpretation follows directly from the definition of a [linear transformation](../06_Linear_Transformations/01_linear_transformation.ipynb).
+```
+
+### **10.10. Examples of Bad References (Forced, Artificial, or Author-Driven)**
+
+**Example 1:**
+
+```markdown
+Builds on [Vectors](./01_vector_definition.ipynb). Together with [Scalar Multiplication of a Vector](./03_vector_scalar_multiplication.ipynb), this operation underlies the linear combinations used in [Matrix-Vector Multiplication](../03_Matrix/04_matrix_vector_multiplication.ipynb).
+```
+
+Reason: references are listed mechanically rather than appearing naturally within the explanation.
+
+**Example 2:**
+
+```markdown
+This topic uses concepts from [Vectors](./01_vector_definition.ipynb), [Matrices](../03_Matrix/01_matrix_definition.ipynb), and [Linear Transformations](../06_Linear_Transformations/01_linear_transformation.ipynb).
+```
+
+Reason: generic reference dumping without explanatory integration.
+
+**Example 3:**
+
+```markdown
+Before studying this concept, review [Vector Addition](./02_vector_addition.ipynb), [Scalar Multiplication](./03_vector_scalar_multiplication.ipynb), and [Linear Combination](./04_linear_combination.ipynb).
+```
+
+Reason: prerequisite list inserted artificially instead of being referenced where conceptually needed.
+
+**Example 4:**
+
+```markdown
+Savov places rotations and reflections under this broader concept, so this notebook links to [rotations](../06_Linear_Transformations/11_rotation_matrix_representation.ipynb) and [reflections](../06_Linear_Transformations/10_reflection_matrix_representation.ipynb).
+```
+
+Reason: link justified by author commentary instead of being introduced through the concept.
+
+### **10.11. Final Rule**
+
+Notebook explanations must be **author-neutral, concept-centered, and pedagogically direct**. Do not mention authors, chapters, or book structure. Concept references should **enhance understanding**, appear **naturally within the explanation**, and **never be inserted mechanically just to create links** or justified by commentary about the literature.

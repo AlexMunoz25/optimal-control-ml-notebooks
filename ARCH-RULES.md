@@ -489,10 +489,23 @@ Useful for online estimation and memory-constrained systems.
 [⬅️ Previous: Determinant](./09_matrix_determinant.ipynb) | [Next: Rank–Nullity ➡️](./11_matrix_rank_nullity.ipynb)
 ```
 
+**EMOJIS:**
+- Every reference line MUST start with a book emoji: `📘` for primary textbooks, `📗` for supplementary sources (lecture notes, course material, other references).
+- The "Previous" navigation link MUST start with `⬅️`: `[⬅️ Previous: <Title>](<path>)`
+- The "Next" navigation link MUST end with `➡️`: `[Next: <Title> ➡️](<path>)`
+- These emojis are part of the mandatory format and must not be omitted.
+
+**LINKS:**
+- Reference links MUST point to a publicly accessible online URL (publisher page, DOI, PDF, official course page, etc.).
+- References MUST NOT link to local paths inside the `Literature/` folder. The `Literature/` directory is a local working resource and is not pushed to the repository; local links will be broken for every reader.
+
 **FORBIDDEN:**
 - Unreferenced content (all notebooks must cite sources)
 - Broken navigation links
 - Missing previous/next links (except for first/last in section)
+- Reference lines without a book emoji (`📘` or `📗`)
+- Navigation links without directional emojis (`⬅️`, `➡️`)
+- Reference links pointing to local `Literature/` paths (use a public URL instead)
 
 ---
 

@@ -352,3 +352,89 @@ Always prioritize readability and explicitness in comprehensions—when in doubt
 
 **REMEMBER:**  
 **GOOD CODE IS SELF-EXPLANATORY!**
+
+---
+
+## **8. SymPy as Primary Implementation Library (NON-NEGOTIABLE)**
+
+**Always prefer SymPy** for notebook implementations. SymPy produces exact symbolic results that match the mathematical definitions in Cell 2, making the output look like textbook mathematics.
+
+Use NumPy or SciPy **only** when:
+- The task is purely numerical (large-scale simulation, optimization solvers, data processing).
+- Performance matters and symbolic computation is impractical.
+- A specific numerical routine has no symbolic equivalent (e.g., `scipy.linalg.solve_discrete_are`).
+
+For everything else — derivations, definitions, algebraic manipulation, equation display — **SymPy is the default**.
+
+### Symbol Naming Rules
+
+Symbols **must** use single mathematical letters or standard notation so that printed output reads like literature. Use `sympy.symbols` with descriptive mathematical names, **not** programming-style variable names.
+
+#### ❌ Bad (programming-style names)
+
+```python
+import sympy as sp
+
+vec_x = sp.Matrix([sp.Symbol('vec_x1'), sp.Symbol('vec_x2')])
+mat_A = sp.Matrix([[sp.Symbol('a11'), sp.Symbol('a12')],
+                    [sp.Symbol('a21'), sp.Symbol('a22')]])
+result = mat_A * vec_x
+```
+
+#### ✅ Good (mathematical symbols)
+
+```python
+import sympy as sp
+
+x_1, x_2 = sp.symbols('x_1 x_2')
+a, b, c, d = sp.symbols('a b c d')
+
+x = sp.Matrix([x_1, x_2])
+A = sp.Matrix([[a, b],
+               [c, d]])
+
+result = A * x
+result
+```
+
+#### ❌ Bad (verbose names for standard quantities)
+
+```python
+eigenvalue_1, eigenvalue_2 = sp.symbols('eigenvalue_1 eigenvalue_2')
+state_vector = sp.Matrix([sp.Symbol('state_1'), sp.Symbol('state_2')])
+```
+
+#### ✅ Good (standard mathematical notation)
+
+```python
+lambda_1, lambda_2 = sp.symbols('lambda_1 lambda_2')
+x = sp.Matrix([sp.symbols('x_1 x_2')])
+```
+
+#### ✅ Good (Greek letters and subscripts)
+
+```python
+alpha, beta, gamma = sp.symbols('alpha beta gamma')
+theta, phi, psi = sp.symbols('theta phi psi')
+omega_n, zeta = sp.symbols('omega_n zeta')
+sigma_1, sigma_2 = sp.symbols('sigma_1 sigma_2')
+```
+
+### Common Naming Conventions
+
+| Concept | Symbol | SymPy |
+|---|---|---|
+| Scalar variables | $x, y, z$ | `x, y, z = sp.symbols('x y z')` |
+| Matrix entries | $a_{ij}$ | `a, b, c, d = sp.symbols('a b c d')` |
+| Eigenvalues | $\lambda_i$ | `lambda_1, lambda_2 = sp.symbols('lambda_1 lambda_2')` |
+| Time | $t$ | `t = sp.symbols('t')` |
+| Frequency | $\omega$ | `omega = sp.symbols('omega')` |
+| State vector | $\mathbf{x}$ | `x = sp.Matrix([x_1, x_2])` |
+| Control input | $\mathbf{u}$ | `u = sp.Matrix([u_1, u_2])` |
+| Cost/objective | $J$ | `J = sp.Symbol('J')` |
+| Damping ratio | $\zeta$ | `zeta = sp.Symbol('zeta')` |
+| Natural frequency | $\omega_n$ | `omega_n = sp.Symbol('omega_n')` |
+
+### Output Display
+
+Prefer `result` (last expression in cell) or `sp.pprint(result)` over `print(result)` so Jupyter renders the output as formatted mathematics.

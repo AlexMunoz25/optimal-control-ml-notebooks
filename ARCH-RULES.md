@@ -56,10 +56,11 @@ Every notebook **MUST** contain the following sections **in this exact order**:
 # CELL 1: Title and Navigation Context (Markdown)
 # CELL 2: Mathematical Definition (Markdown)
 # CELL 3: Theoretical Explanation (Markdown)
-# CELL 4: Implementation (Python Code)
-# CELL 5: [OPTIONAL] Advanced Analysis/Visualization (Python Code)
-# CELL 6: [OPTIONAL] Extended Theory or Variants (Markdown)
-# CELL 7: References and Navigation (Markdown)
+# CELL 4: Numerical Example (Markdown)
+# CELL 5: Implementation (Python Code)
+# CELL 6: [OPTIONAL] Advanced Analysis/Visualization (Python Code)
+# CELL 7: [OPTIONAL] Extended Theory or Variants (Markdown)
+# CELL 8: References and Navigation (Markdown)
 ```
 
 ---
@@ -67,7 +68,7 @@ Every notebook **MUST** contain the following sections **in this exact order**:
 ### **8.2. Cell-by-Cell Specification**
 
 #### **CELL 1: Title and Navigation Context**
-**Type:** Markdown  
+**Type:** Markdown
 **Purpose:** Establish the topic's identity, numbering, and hierarchical position.
 
 **REQUIRED ELEMENTS:**
@@ -149,7 +150,7 @@ $$
 2. Concise conceptual description (2-4 sentences)
 3. **[OPTIONAL]** "Assumptions:" subsection (for complex topics)
 4. **[OPTIONAL]** "Properties:" subsection (for mathematical objects)
-5. **"Example:"** heading with analytical or numerical demonstration
+5. **[OPTIONAL]** "Intuition:" subsection when a figure or qualitative example helps prepare the numerical example
 
 **Format Template:**
 ```markdown
@@ -167,19 +168,10 @@ $$
 - Property 1
 - Property 2
 
-**Example:**
+[OPTIONAL when figures or qualitative context are useful:]
+**Intuition:**
 
-<Analytical or numerical example with step-by-step derivation>
-
-If
-$$
-<setup>
-$$
-
-then
-$$
-<result>
-$$
+<Brief figure-based or qualitative context. Detailed calculations belong in Cell 4.>
 ```
 
 **Examples:**
@@ -191,21 +183,9 @@ $$
 The Euclidean norm measures the magnitude (length) of a vector.  
 It is useful in optimization and distance computations in ML.
 
-**Example:**
+**Intuition:**
 
-If  
-$$
-\mathbf{v} =
-\begin{bmatrix}
-3 \\
-4
-\end{bmatrix},
-$$  
-
-then  
-$$
-\|\mathbf{v}\| = \sqrt{3^2 + 4^2} = 5.
-$$
+A two-dimensional vector can be drawn as the diagonal of a right triangle, so its norm is the triangle's hypotenuse.
 ```
 
 **Complex (Kalman Filter):**
@@ -223,7 +203,7 @@ Widely used in navigation, robotics, and signal processing.
 - Measurement noise $\mathbf{v}_k \sim \mathcal{N}(0, \mathbf{R})$
 - Initial state estimate known
 
-**Example:**
+**Intuition:**
 
 Consider a 1D constant-velocity model tracking a moving object.  
 State: $\mathbf{x} = [position, velocity]^T$  
@@ -233,12 +213,81 @@ Measurement: position only, corrupted by noise with $\sigma = 5$ m.
 **FORBIDDEN:**
 - Implementation details
 - Code snippets
-- Lengthy derivations (keep concise)
+- Numerical calculations that belong in Cell 4
 - Duplicate equations from Cell 2
 
 ---
 
-#### **CELL 4: Implementation**
+#### **CELL 4: Numerical Example**
+**Type:** Markdown
+**Purpose:** Show the topic in a simple, concrete calculation before any code appears.
+
+**REQUIRED ELEMENTS:**
+1. **"Numerical Example:"** heading
+2. A small, explicit numerical setup
+3. Step-by-step algebra or arithmetic with intermediate values shown
+4. A final conclusion that states what the calculation demonstrates
+5. If the notebook already uses a figure, connect the calculation to that figure where possible
+
+**Format Template:**
+```markdown
+**Numerical Example:**
+
+<Plain-language setup, optionally tied to the figure in Cell 3.>
+
+Let
+$$
+<numerical_setup>
+$$
+
+Then
+$$
+<intermediate_step_1>
+$$
+
+and
+$$
+<intermediate_step_2>
+$$
+
+Therefore, <clear conclusion>.
+```
+
+**Example:**
+```markdown
+**Numerical Example:**
+
+Let
+$$
+\mathbf{v} =
+\begin{bmatrix}
+3 \\
+4
+\end{bmatrix}.
+$$
+
+Then
+$$
+\|\mathbf{v}\|^2 = 3^2 + 4^2 = 9 + 16 = 25,
+$$
+
+so
+$$
+\|\mathbf{v}\| = \sqrt{25} = 5.
+$$
+
+The norm is therefore the length of the vector.
+```
+
+**FORBIDDEN:**
+- Code snippets
+- Skipping algebraic or numerical steps
+- Hand-wavy examples without concrete values
+- Reusing a figure without explaining how the calculation relates to it
+
+---
+
+#### **CELL 5: Implementation**
 **Type:** Python Code  
 **Purpose:** Provide minimal, elegant, self-explanatory implementation.
 
@@ -307,7 +356,7 @@ print("Optimal gain K =\n", np.round(K, 4))
 
 ---
 
-#### **CELL 5: [OPTIONAL] Advanced Analysis/Visualization**
+#### **CELL 6: [OPTIONAL] Advanced Analysis/Visualization**
 **Type:** Python Code  
 **Purpose:** Provide visual insight, comparative analysis, or extended experiments.
 
@@ -395,7 +444,7 @@ plt.show()
 
 ---
 
-#### **CELL 6: [OPTIONAL] Extended Theory or Variants**
+#### **CELL 7: [OPTIONAL] Extended Theory or Variants**
 **Type:** Markdown  
 **Purpose:** Present alternative formulations, extensions, or related concepts.
 
@@ -442,7 +491,7 @@ Useful for online estimation and memory-constrained systems.
 
 ---
 
-#### **CELL 7: References and Navigation**
+#### **CELL 8: References and Navigation**
 **Type:** Markdown  
 **Purpose:** Credit sources and enable repository navigation.
 
@@ -512,9 +561,9 @@ Useful for online estimation and memory-constrained systems.
 ### **8.3. What Changes Per Notebook vs What Stays Identical**
 
 #### **ALWAYS IDENTICAL (Structure):**
-1. Number of mandatory cells (Cells 1-4, 7)
+1. Number of mandatory cells (Cells 1-5, 8)
 2. Cell order
-3. Section headings ("Explanation:", "Example:", "References:")
+3. Section headings ("Explanation:", "Numerical Example:", "References:")
 4. Navigation link format
 
 #### **CHANGES PER TOPIC (Content):**
@@ -544,7 +593,9 @@ Useful for online estimation and memory-constrained systems.
 #### **Optimization (03_Optimization/):**
 - **Cell 2** MUST show objective function and constraints
 - **Cell 3** MUST explain feasibility and optimality conditions
-- **Cell 5** SHOULD compare solution methods or visualize feasible regions
+- **Cell 4** MUST include a simple numerical example with all intermediate algebraic or numerical steps
+- If the notebook already includes a figure, **Cell 4** SHOULD connect the calculation to the figure whenever the figure supports the example
+- **Cell 6** SHOULD compare solution methods or visualize feasible regions
 
 #### **Optimal Control (04_Optimal_Control/):**
 - **Cell 3** MUST state control objective (regulation, tracking, etc.)
@@ -566,11 +617,12 @@ When generating a new notebook, verify:
 - [ ] Section number matches folder hierarchy
 - [ ] Cell 1 contains only `### <number>. <Title>`
 - [ ] Cell 2 contains only equations (no prose)
-- [ ] Cell 3 has "Explanation:" and "Example:" headings
-- [ ] Cell 4 follows coding rules (Sections 0-7)
-- [ ] Cell 5 exists only if visualization/analysis adds pedagogical value
-- [ ] Cell 6 exists only if meaningful variants/extensions exist
-- [ ] Cell 7 has references and navigation links
+- [ ] Cell 3 has "Explanation:" heading
+- [ ] Cell 4 has "Numerical Example:" heading and shows all intermediate steps before code
+- [ ] Cell 5 follows coding rules (Sections 0-7)
+- [ ] Cell 6 exists only if visualization/analysis adds pedagogical value
+- [ ] Cell 7 exists only if meaningful variants/extensions exist
+- [ ] Cell 8 has references and navigation links
 - [ ] Code is self-explanatory (no comments explaining "what")
 - [ ] All variables have descriptive names (no `x`, `y`, `tmp`)
 - [ ] Comprehensions used where appropriate (Rule 7)
@@ -642,8 +694,8 @@ When creating or updating a notebook:
 1. **Locate** the corresponding literature file (e.g., `Literature/01 - Foundations/Savov 2016 - .../chapter_02.md`)
 2. **Extract** relevant definitions, explanations, and examples
 3. **Audit** extracted content for conversion errors (OCR mistakes, malformed equations, missing symbols)
-4. **Adapt** content to notebook structure (Cells 1-7) while preserving original vocabulary
-5. **Reference** the source in Cell 7
+4. **Adapt** content to notebook structure (Cells 1-8) while preserving original vocabulary
+5. **Reference** the source in Cell 8
 
 ### **9.4. Forbidden**
 
@@ -664,7 +716,7 @@ Formatting is **strict** and must always follow this structure:
     - Main equation (if applicable)
     - Concise, literature-accurate or summarized explanation (keep same terminology)
     - Analytical example (if applicable)
-    - Numerical example (if applicable)
+    - Numerical example (required)
         
 2. **Code Section**
     - Short, elegant implementation
@@ -702,7 +754,7 @@ The dot product calculates a scalar representing the magnitude of projection of 
 It is widely used in machine learning for similarity measures or linear operations.
 
   
-**Example:**
+**Numerical Example:**
 
   
 If
@@ -750,11 +802,9 @@ Implementation
 ```python
 import numpy as np
 
-# Define vectors
 u = np.array([1, 2])
 v = np.array([3, 4])
 
-# Compute dot product
 result = np.dot(u, v)
 print("u · v =", result)
 ```
@@ -886,7 +936,7 @@ The literature in `Literature/` should guide **content accuracy**, but it must n
 Authors and books may only appear in:
 
 - Repository documentation.
-- Bibliography sections (Cell 7).
+- Bibliography sections (Cell 8).
 - Reference metadata (if explicitly required).
 
 They must **not appear inside concept explanations**.

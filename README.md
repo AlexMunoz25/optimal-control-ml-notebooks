@@ -140,6 +140,18 @@ Notebooks are sequentially linked — each one points to the previous and next i
 
 ---
 
+## Missing Prerequisite Notes
+
+The optimization notebooks now link to existing prerequisite notebooks where the repository already has coverage. A few foundational concepts still do not have dedicated prerequisite notebooks:
+
+| Concept area | Needed in optimization notebooks | Likely foundation location |
+|--------------|----------------------------------|----------------------------|
+| Differential calculus for optimization | Gradients, Hessians, directional derivatives, Taylor approximations, and second-order optimality conditions in `03_Optimization/01_Unconstrained_Optimization` and `03_Optimization/02_Convex_Optimization/09_Unconstrained_Minimization`, `10_Equality_Constrained_Minimization`, and `11_Interior_Point_Methods` | `01_Foundations/03_Calculus` |
+| Probability and statistics for convex estimation | Likelihoods, log-likelihoods, entropy, KL divergence, random variables, means, variances, covariance matrices, and hypothesis-testing terminology in `03_Optimization/02_Convex_Optimization/07_Statistical_Estimation` | `01_Foundations/02_Probability_and_Statistics` |
+| Convex-analysis bridge topics | Subgradients, supporting hyperplanes, separating hyperplanes, epigraph reasoning, and dual cones across `03_Optimization/02_Convex_Optimization/02_Convex_Sets`, `03_Convex_Functions`, and `05_Duality` | Either remain in `03_Optimization/02_Convex_Optimization` or become a future foundations-level convex-analysis bridge |
+
+---
+
 # Getting Started 
 
 

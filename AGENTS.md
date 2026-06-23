@@ -35,6 +35,8 @@ Use this checklist whenever adding or editing a notebook:
 - Keep the mandatory cell order defined in [ARCH-RULES.md](/home/almuno/github/optimal-control-ml-notebooks/ARCH-RULES.md).
 - Keep markdown explanation in markdown cells and implementation in code cells.
 - Keep code self-explanatory, minimal, and free of unrequested guard rails.
+- Prefer the repository notebook Python stack when it fits the lesson: `sympy` for symbolic mathematics and algebraic derivations, `python-control` for control notebooks, `casadi` for optimization, automatic differentiation, and control-oriented numerical optimization, and `tensorflow` for machine learning notebooks.
+- Make notebook outputs pedagogical: print relevant intermediate values when they help the reader follow the same calculation shown in the numerical example.
 - Cite the canonical source material in the references cell.
 - Update previous/next navigation for the edited notebook and any directly affected neighbor notebooks.
 

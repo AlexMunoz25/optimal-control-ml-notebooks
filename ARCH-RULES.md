@@ -24,7 +24,8 @@ This repository is organized as a curriculum, not as an application stack.
 - Do not introduce service layers, managers, or helper frameworks for notebook content unless explicitly requested.
 - Keep lesson-specific code in the notebook that teaches it.
 - Reuse figures and literature references instead of duplicating assets or inventing parallel terminology.
-- Use the existing scientific Python stack unless the task explicitly requires something else.
+- Use the preferred notebook Python stack when it fits the lesson: `sympy` for symbolic mathematics and algebraic derivations, `python-control` for control notebooks, `casadi` for optimization, automatic differentiation, and control-oriented numerical optimization, and `tensorflow` for machine learning notebooks.
+- Use `numpy` and `scipy` as supporting tools, not as replacements for the preferred domain library when that library naturally matches the topic.
 - Preserve relative linking between neighboring notebooks; notebook navigation is part of the architecture.
 
 ---
@@ -295,7 +296,7 @@ The norm is therefore the length of the vector.
 1. Necessary imports (grouped at top)
 2. Parameter/data definition
 3. Core computation
-4. Output display (print or return)
+4. Output display with labeled intermediate values when those values help the reader follow the calculation
 
 **STYLE RULES:**
 - Follow all coding rules in [CODING-RULES.md](/home/almuno/github/optimal-control-ml-notebooks/CODING-RULES.md)
@@ -303,6 +304,7 @@ The norm is therefore the length of the vector.
 - NO docstrings
 - Prefer comprehensions over loops (Rule 7)
 - Use clearly named variables (Rule 2)
+- Outputs should make the code's reasoning visible and should align with Cell 4's numerical example whenever Cell 5 implements that example
 
 **Format Template:**
 ```python
@@ -314,8 +316,9 @@ import <library>
 # Compute result
 <computation>
 
-# Display output
-print("<label>", result)
+# Display learning-oriented output
+print("<intermediate label> =", intermediate_value)
+print("<final label> =", result)
 ```
 
 **Examples:**
@@ -595,18 +598,19 @@ Useful for online estimation and memory-constrained systems.
 - **Cell 3** MUST explain feasibility and optimality conditions
 - **Cell 4** MUST include a simple numerical example with all intermediate algebraic or numerical steps
 - If the notebook already includes a figure, **Cell 4** SHOULD connect the calculation to the figure whenever the figure supports the example
+- **Cell 5** SHOULD prefer `casadi` for numerical optimization and automatic differentiation when the example is solver-based or derivative-based; use `sympy` when the lesson is primarily symbolic or algebraic
 - **Cell 6** SHOULD compare solution methods or visualize feasible regions
 
 #### **Optimal Control (04_Optimal_Control/):**
 - **Cell 3** MUST state control objective (regulation, tracking, etc.)
 - **Cell 4** MUST define dynamics, cost matrices, horizons
-- **Cell 5** MUST show closed-loop response plots
+- **Cell 5** MUST show closed-loop response plots and SHOULD prefer `python-control` for standard control-system modeling, simulation, and design
 - **Cell 6** SHOULD discuss stability, robustness, or extensions
 
 #### **Machine Learning / Reinforcement Learning (05_ML, 07_RL):**
 - **Cell 3** MUST explain model assumptions (i.i.d. data, stationarity, etc.)
 - **Cell 4** MUST include dataset generation or loading
-- **Cell 5** MUST show training curves, performance metrics, or decision boundaries
+- **Cell 5** MUST show training curves, performance metrics, or decision boundaries and SHOULD prefer `tensorflow` for machine learning implementations
 
 ---
 

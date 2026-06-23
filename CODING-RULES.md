@@ -144,8 +144,12 @@ def rename(note_id, new_title):
 Additional repository guidance:
 
 - Prefer short notebook implementations that demonstrate the math directly.
-- Use imports already present in [requirements.txt](/home/almuno/github/optimal-control-ml-notebooks/requirements.txt) unless the prompt explicitly requires a new dependency.
+- Prefer the repository notebook stack when it fits the lesson: `sympy` for symbolic mathematics and algebraic derivations, `python-control` for control notebooks, `casadi` for optimization, automatic differentiation, and control-oriented numerical optimization, and `tensorflow` for machine learning notebooks.
+- `numpy` and `scipy` may support arrays, plotting data, and numerical routines, but they should not replace the preferred domain library when that library naturally expresses the lesson.
+- If a new notebook code cell uses an approved preferred package that is not yet listed in [requirements.txt](/home/almuno/github/optimal-control-ml-notebooks/requirements.txt), update the requirements in the same task unless the prompt explicitly limits the work to documentation.
 - Keep one conceptual computation per notebook code cell unless the notebook architecture explicitly calls for a comparison or visualization.
+- Notebook code is for learning, not just computation. Print relevant intermediate values when they help the reader follow the calculation.
+- Code outputs should make the reasoning visible and should align with the notebook's numerical example whenever the code implements that example.
 
 ---
 
@@ -355,16 +359,18 @@ Always prioritize readability and explicitness in comprehensions—when in doubt
 
 ---
 
-## **8. SymPy as Primary Implementation Library (NON-NEGOTIABLE)**
+## **8. Preferred Notebook Python Stack (NON-NEGOTIABLE)**
 
-**Always prefer SymPy** for notebook implementations. SymPy produces exact symbolic results that match the mathematical definitions in Cell 2, making the output look like textbook mathematics.
+Notebook code should use the domain library that best matches the mathematical lesson. Prefer these libraries even when a shorter `numpy`, `scipy`, or equivalent implementation is possible:
 
-Use NumPy or SciPy **only** when:
-- The task is purely numerical (large-scale simulation, optimization solvers, data processing).
-- Performance matters and symbolic computation is impractical.
-- A specific numerical routine has no symbolic equivalent (e.g., `scipy.linalg.solve_discrete_are`).
+- **`sympy`** for symbolic mathematics, exact algebra, derivations, equation manipulation, and textbook-style outputs.
+- **`python-control`** for control-system notebooks, including transfer functions, state-space systems, stability, frequency response, simulation, and standard control design workflows.
+- **`casadi`** for optimization, automatic differentiation, nonlinear programming, trajectory optimization, and control-oriented numerical optimization.
+- **`tensorflow`** for machine learning notebooks, including differentiable models, training loops, datasets, and neural-network examples.
 
-For everything else — derivations, definitions, algebraic manipulation, equation display — **SymPy is the default**.
+Use `numpy` or `scipy` when they are supporting tools for array construction, plotting data, simple numerical checks, or a specific routine that is not naturally available in the preferred domain library. Do not choose `numpy` or `scipy` merely because the implementation is shorter if the lesson belongs more clearly to `sympy`, `python-control`, `casadi`, or `tensorflow`.
+
+For derivations, definitions, algebraic manipulation, and equation display, **SymPy is the default**.
 
 ### Symbol Naming Rules
 
@@ -437,4 +443,6 @@ sigma_1, sigma_2 = sp.symbols('sigma_1 sigma_2')
 
 ### Output Display
 
-Prefer `result` (last expression in cell) or `sp.pprint(result)` over `print(result)` so Jupyter renders the output as formatted mathematics.
+Prefer labeled `print(...)` or `display(...)` calls for instructional outputs that need to show intermediate steps. A bare final expression is acceptable only when one rendered object is clearer than several labels.
+
+Use `sp.pprint(...)` or `display(...)` for SymPy objects when mathematical rendering matters, but keep the output explicit enough that a reader can see how the code reaches the final result.

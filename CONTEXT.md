@@ -29,7 +29,7 @@ Supporting material lives in:
 
 - [Figures](/home/almuno/github/optimal-control-ml-notebooks/Figures): reusable images referenced from notebooks.
 - [Literature](/home/almuno/github/optimal-control-ml-notebooks/Literature): PDFs and Markdown conversions that define the canonical terminology and source material.
-- [requirements.txt](/home/almuno/github/optimal-control-ml-notebooks/requirements.txt): the baseline notebook toolchain, currently centered on `numpy`, `sympy`, `scipy`, `matplotlib`, `pandas`, and Jupyter packages.
+- [requirements.txt](/home/almuno/github/optimal-control-ml-notebooks/requirements.txt): the baseline notebook toolchain. The preferred notebook backbone is `sympy` for symbolic mathematics and algebraic derivations, `python-control` for control notebooks, `casadi` for optimization, automatic differentiation, and control-oriented numerical optimization, and `tensorflow` for machine learning notebooks.
 
 ## Conceptual Model
 
@@ -62,6 +62,8 @@ When making changes, optimize for:
 - consistency with neighboring notebooks
 - literature-aligned terminology
 - minimal code that demonstrates the idea directly
+- preferred domain libraries in notebook code when appropriate, even when `numpy`, `scipy`, or another equivalent library could implement the same calculation more directly
+- code outputs that expose the reasoning steps of the calculation, especially when those steps align with the notebook's numerical example
 
 Do not optimize for:
 

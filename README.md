@@ -20,41 +20,49 @@ optimal-control-ml-notebooks/
 ├── ARCH-RULES.md
 ├── requirements.txt
 │
-├── 01_Foundations/
-│   ├── 01_Linear_Algebra/                                    ← 104 notebooks
+├── 01_Foundations/                                           ← 123 notebooks
+│   ├── 01_Linear_Algebra/                                    ← 123 notebooks
 │   │   ├── 01_Prerequisites/                                 (3 notebooks)
 │   │   ├── 02_Vector/                                        (9 notebooks)
 │   │   ├── 03_Matrix/                                        (20 notebooks)
 │   │   ├── 04_Computational_Linear_Algebra/                  (6 notebooks)
 │   │   ├── 05_Geometrical_Aspects_of_Linear_Algebra/         (17 notebooks)
 │   │   ├── 06_Linear_Transformations/                        (14 notebooks)
-│   │   ├── 07_Theoretical_Linear_Algebra/                    (25 notebooks)
+│   │   ├── 07_Theoretical_Linear_Algebra/                    (31 notebooks)
 │   │   ├── 08_Coordinate_Transformations/                    (10 notebooks)
-│   │   └── 09_Multilinear_Algebra_and_Tensors/               (planned)
+│   │   └── 09_Multilinear_Algebra_and_Tensors/               (13 notebooks)
 │   ├── 02_Probability_and_Statistics/                        ← planned
 │   ├── 03_Calculus/                                          ← planned
 │   ├── 04_Calculus_of_Variations/                            ← planned
 │   ├── 05_DIfferential_Equations/                            ← planned
 │   └── 06_Integral_Transforms/                               ← planned
 │
-├── 02_Dynamics/
+├── 02_Dynamics/                                              ← planned
 │   ├── 01_Causal_Acausal_Modeling/                           ← planned
 │   ├── 02_Modeling_using_Lagrange/                           ← planned
 │   ├── 03_Modeling_using_Bond_Graph/                         ← planned
 │   └── 04_Modeling_using_Port_Hamiltonian/                   ← planned
 │
-├── 03_Optimization/
-│   ├── 01_Linear_Programming_LP/                             ← planned
-│   ├── 02_Convex_Quadratic_Programming_QP/                   ← planned
-│   ├── 03_Convex_Quadratically_Constrained_Quadratic_Programming_QCQP/ ← planned
-│   ├── 04_Second_Order_Cone_Programming_SOCP/                ← planned
-│   ├── 05_Semidefinite_Programming_SDP/                      ← planned
-│   ├── 06_Mixed_Integer_Programming_MIP/                     ← planned
-│   ├── 07_Global_Nonconvex_Optimization/                     ← planned
-│   ├── 08_Robust_and_Stochastic_Optimization/                ← planned
-│   └── 09_PDE_Constrained_Optimization/                      ← planned
+├── 03_Optimization/                                          ← 153 notebooks
+│   ├── 01_Unconstrained_Optimization/                        (30 notebooks)
+│   ├── 02_Convex_Optimization/                               (106 notebooks)
+│   │   ├── 01_Introduction/                                  (4 notebooks)
+│   │   ├── 02_Convex_Sets/                                   (11 notebooks)
+│   │   ├── 03_Convex_Functions/                              (12 notebooks)
+│   │   ├── 04_Convex_Optimization_Problems/                  (12 notebooks)
+│   │   ├── 05_Duality/                                       (10 notebooks)
+│   │   ├── 06_Approximation_and_Fitting/                     (10 notebooks)
+│   │   ├── 07_Statistical_Estimation/                        (10 notebooks)
+│   │   ├── 08_Geometric_Problems/                            (10 notebooks)
+│   │   ├── 09_Unconstrained_Minimization/                    (8 notebooks)
+│   │   ├── 10_Equality_Constrained_Minimization/             (8 notebooks)
+│   │   └── 11_Interior_Point_Methods/                        (11 notebooks)
+│   ├── 03_Lagrange_Multiplier_Theory/                        (17 notebooks)
+│   ├── 04_Lagrange_Multiplier_Algorithms/                    ← planned
+│   ├── 05_Duality_and_Convex_Programming/                    ← planned
+│   └── 06_Dual_Methods/                                      ← planned
 │
-├── 04_Optimal_Control/
+├── 04_Optimal_Control/                                       ← planned
 │   ├── 01_Controllability_and_Observability/                 ← planned
 │   ├── 02_Kalman_FIlter/                                     ← planned
 │   ├── 03_Full_State_Feedback_Control/                       ← planned
@@ -65,33 +73,35 @@ optimal-control-ml-notebooks/
 │   ├── 08_Nonlinear_Model_Predictive_Control_NMPC/           ← planned
 │   ├── 09_Robust_and_H_infinity_Control/                     ← planned
 │   ├── 10_Hybrid_and_Switched_Systems_Control/               ← planned
-│   ├── 11_PDE_Constrained_Optimal_Control/                   ← planned
-│   └── 13_Reinforcement_Learning_and_Approx_DP/              ← planned
+│   └── 11_PDE_Constrained_Optimal_Control/                   ← planned
 │
 ├── 05_Machine_Learning/                                      ← planned
 ├── 07_Reinforcement_Learning/                                ← planned
 │
-├── A1_OOP/
-│   ├── 01_Object_Oriented_Principle/
-│   └── 02_Object_Oriented_Design_Patterns/
-├── A2_LLVM_Compilers/
-│   ├── 01_Compiler_Foundations/
-│   ├── 02_LLVM_Intermediate_Representation/
-│   ├── 03_Pass_Infrastructure/
-│   ├── 04_Optimization_Topics/
-│   └── 05_MLIR/
-├── A3_Performance_and_Systems/
-│   ├── 01_Central_Processing_Unit_Performance/
-│   ├── 02_Vectorization/
-│   ├── 03_Parallelism/
-│   └── 04_Profiling/
-├── A4_ML_Infrastructure/
-│   ├── 01_ML_Compiler_Ecosystem/
-│   ├── 02_Framework_Integration/
-│   ├── 03_Runtime_Topics/
-│   └── 04_Benchmarking_and_Regressions/
+├── A1_OOP/                                                   ← 13 notebooks
+│   ├── 01_Object_Oriented_Principle/                         (7 notebooks)
+│   └── 02_Object_Oriented_Design_Patterns/                   (6 notebooks)
+├── A2_LLVM_Compilers/                                        ← 16 notebooks
+│   ├── 01_Compiler_Foundations/                              (4 notebooks)
+│   ├── 02_LLVM_Intermediate_Representation/                  (3 notebooks)
+│   ├── 03_Pass_Infrastructure/                               (3 notebooks)
+│   ├── 04_Optimization_Topics/                               (3 notebooks)
+│   └── 05_MLIR/                                              (3 notebooks)
+├── A3_Performance_and_Systems/                               ← 9 notebooks
+│   ├── 01_Central_Processing_Unit_Performance/               (3 notebooks)
+│   ├── 02_Vectorization/                                     (2 notebooks)
+│   ├── 03_Parallelism/                                       (2 notebooks)
+│   └── 04_Profiling/                                         (2 notebooks)
+├── A4_ML_Infrastructure/                                     ← 12 notebooks
+│   ├── 01_ML_Compiler_Ecosystem/                             (3 notebooks)
+│   ├── 02_Framework_Integration/                             (3 notebooks)
+│   ├── 03_Runtime_Topics/                                    (3 notebooks)
+│   └── 04_Benchmarking_and_Regressions/                      (3 notebooks)
+├── A5_Interview_Katas/                                       ← 28 notebooks
+│   ├── 01_Object_Oriented_Programming_Katas/                 (15 notebooks)
+│   └── 04_Machine_Learning_Katas/                            (13 notebooks)
 │
-├── Figures/                                                  ← reusable diagrams and plots
+├── Figures/                                                  ← 150 reusable figure files
 └── Literature/                                               ← source material and references
 ```
 
@@ -106,10 +116,11 @@ Every notebook follows the architecture defined in `ARCH-RULES.md`:
 | 1    | Markdown | Section number and title |
 | 2    | Markdown | Core equation(s) |
 | 3    | Markdown | Theoretical explanation |
-| 4    | Code     | Minimal implementation |
-| 5    | Code     | Optional analysis or visualization |
-| 6    | Markdown | Optional extended theory or variants |
-| 7    | Markdown | References + Previous / Next links |
+| 4    | Markdown | Numerical example with intermediate steps |
+| 5    | Code     | Minimal implementation |
+| 6    | Code     | Optional advanced analysis or visualization |
+| 7    | Markdown | Optional extended theory or variants |
+| 8    | Markdown | References + Previous / Next links |
 
 Notebooks are sequentially linked — each one points to the previous and next in the series.
 
@@ -119,24 +130,31 @@ Notebooks are sequentially linked — each one points to the previous and next i
 
 | Section | Topic | Notebooks | Status |
 |---------|-------|-----------|--------|
-| 01 Foundations / 01 Linear Algebra | Prerequisites | 3 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Vectors | 9 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Matrices | 20 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Computational Linear Algebra | 6 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Geometrical Aspects | 17 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Linear Transformations | 14 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Theoretical Linear Algebra | 25 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Coordinate Transformations | 10 | ✅ |
-| 01 Foundations / 01 Linear Algebra | Multilinear Algebra and Tensors | — | 📋 Planned |
-| 01 Foundations / 02–06 | Probability, Calculus, Variations, Differential Equations, Integral Transforms | — | 📋 Planned |
-| 02 Dynamics | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian | — | 📋 Planned |
-| 03 Optimization | LP through PDE-Constrained Optimization | — | 📋 Planned |
-| 04 Optimal Control | Controllability, Estimation, LQR, MPC, Robust Control, RL | — | 📋 Planned |
-| 05 Machine Learning | Core modules | — | 📋 Planned |
-| 07 Reinforcement Learning | Core modules | — | 📋 Planned |
-| Appendices | OOP, LLVM, Performance, ML Infrastructure | In progress | 🚧 |
+| 01 Foundations / 01 Linear Algebra | Prerequisites | 3 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Vectors | 9 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Matrices | 20 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Computational Linear Algebra | 6 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Geometrical Aspects | 17 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Linear Transformations | 14 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Theoretical Linear Algebra | 31 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Coordinate Transformations | 10 | ✅ Available |
+| 01 Foundations / 01 Linear Algebra | Multilinear Algebra and Tensors | 13 | ✅ Available |
+| 01 Foundations / 02–06 | Probability, Calculus, Variations, Differential Equations, Integral Transforms | 0 | 📋 Planned |
+| 02 Dynamics | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian | 0 | 📋 Planned |
+| 03 Optimization / 01 Unconstrained Optimization | Nonlinear programming, Chapter 1-style unconstrained methods | 30 | ✅ Available |
+| 03 Optimization / 02 Convex Optimization | Boyd and Vandenberghe-style convex optimization sequence | 106 | ✅ Available |
+| 03 Optimization / 03 Lagrange Multiplier Theory | Equality multipliers, KKT, Fritz John, constraint qualifications, duality | 17 | ✅ Available |
+| 03 Optimization / 04–06 | Lagrange multiplier algorithms, duality and convex programming, dual methods | 0 | 📋 Planned |
+| 04 Optimal Control | Controllability, estimation, LQR, LQG, trajectory optimization, MPC, robust control, hybrid systems, PDE-constrained optimal control | 0 | 📋 Planned |
+| 05 Machine Learning | Core modules | 0 | 📋 Planned |
+| 07 Reinforcement Learning | Core modules | 0 | 📋 Planned |
+| A1 OOP | Object-oriented principles and design patterns | 13 | ✅ Available |
+| A2 LLVM Compilers | Compiler foundations, LLVM IR, passes, optimization, MLIR | 16 | ✅ Available |
+| A3 Performance and Systems | CPU performance, vectorization, parallelism, profiling | 9 | ✅ Available |
+| A4 ML Infrastructure | ML compilers, framework integration, runtime topics, benchmarking | 12 | ✅ Available |
+| A5 Interview Katas | OOP and machine-learning infrastructure katas | 28 | ✅ Available |
 
-**Current Total: 154 notebooks**
+**Current Total: 354 notebooks**
 
 ---
 
@@ -146,9 +164,9 @@ The optimization notebooks now link to existing prerequisite notebooks where the
 
 | Concept area | Needed in optimization notebooks | Likely foundation location |
 |--------------|----------------------------------|----------------------------|
-| Differential calculus for optimization | Gradients, Hessians, directional derivatives, Taylor approximations, and second-order optimality conditions in `03_Optimization/01_Unconstrained_Optimization` and `03_Optimization/02_Convex_Optimization/09_Unconstrained_Minimization`, `10_Equality_Constrained_Minimization`, and `11_Interior_Point_Methods` | `01_Foundations/03_Calculus` |
+| Differential calculus for optimization | Gradients, Hessians, directional derivatives, Taylor approximations, implicit-function and mean-value theorem tools, sensitivity derivatives, primal functions, and second-order optimality conditions in `03_Optimization/01_Unconstrained_Optimization`, `03_Optimization/02_Convex_Optimization/09_Unconstrained_Minimization`, `10_Equality_Constrained_Minimization`, `11_Interior_Point_Methods`, and `03_Optimization/03_Lagrange_Multiplier_Theory` | `01_Foundations/03_Calculus` |
 | Probability and statistics for convex estimation | Likelihoods, log-likelihoods, entropy, KL divergence, random variables, means, variances, covariance matrices, and hypothesis-testing terminology in `03_Optimization/02_Convex_Optimization/07_Statistical_Estimation` | `01_Foundations/02_Probability_and_Statistics` |
-| Convex-analysis bridge topics | Subgradients, supporting hyperplanes, separating hyperplanes, epigraph reasoning, and dual cones across `03_Optimization/02_Convex_Optimization/02_Convex_Sets`, `03_Convex_Functions`, and `05_Duality` | Either remain in `03_Optimization/02_Convex_Optimization` or become a future foundations-level convex-analysis bridge |
+| Convex-analysis and variational-geometry bridge topics | Subgradients, supporting hyperplanes, separating hyperplanes, epigraph reasoning, dual cones, polar cones, tangent cones, Farkas' lemma, quasiregularity, quasinormality, constraint qualifications, and semi-infinite active-gradient cones across `03_Optimization/02_Convex_Optimization/02_Convex_Sets`, `03_Convex_Functions`, `05_Duality`, and `03_Optimization/03_Lagrange_Multiplier_Theory` | Either remain in `03_Optimization/02_Convex_Optimization` or become a future foundations-level convex-analysis bridge |
 
 ---
 

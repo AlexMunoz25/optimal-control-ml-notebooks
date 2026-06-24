@@ -1,10 +1,47 @@
 # Optimal Control and Machine Learning — Jupyter Learning Hub
 
-Control and ML notebooks, covering mathematical foundations, dynamic systems, optimization, optimal control, and machine learning.
+A structured, notebook-first learning path for the mathematics and computation behind modern control, optimization, machine learning, and reinforcement learning.
+
+This repository is built like an executable textbook. Each notebook introduces one idea, states the governing mathematics, works through a concrete numerical example, and then implements the same calculation in Python. The goal is to make advanced topics readable from first principles without separating theory from computation.
+
+## About Me
+
+Hi, I am a software and simulation engineer with about 9 years of experience across aerospace student competitions, industrial simulation software, and R&D engineering. I focus on optimal control, RTO, ML, and dynamic-system modeling, I currently serve as senior R&D in robotics company, and CTO of a startup.
 
 ## Why This Repository
 
-I learn best by building things. If these notes help someone else along the way, even better ...
+I learn best by building things. If these notes help someone else along the way, even better.
+
+This project is for readers who want a coherent path from linear algebra and calculus foundations into optimization, optimal control, ML systems, and reinforcement learning. It is especially useful if you want to see how equations become working code, how prerequisite ideas connect across subjects, and how canonical textbook material can be turned into small, executable lessons.
+
+The curriculum is designed for:
+
+- students building a serious mathematical foundation for control, ML, or robotics
+- engineers who want executable refreshers instead of isolated formulas
+- self-learners who prefer a sequential and wiki-like path with previous/next navigation
+- researchers and practitioners who want compact notebooks grounded in source material
+
+The repository is not a software framework. It is a learning hub: notebooks are written to teach the calculation, expose intermediate steps, and connect each lesson to the surrounding curriculum.
+
+## How The Notebooks Teach
+
+Each notebook follows the same arch:
+
+- a numbered title that matches the folder hierarchy
+- a mathematical definition or main equation at the top
+- a concise explanation that interprets the symbols and main idea
+- figures, visualizations, or extended variants when they help intuition
+- a numerical example that works through the calculation step by step
+- a Python implementation whose output makes the same reasoning visible
+- references to the source material and previous/next navigation links
+
+## Computational Stack
+
+- `sympy` for symbolic algebra, exact arithmetic, derivations, and from-scratch mathematical computation.
+- `casadi` for optimization, automatic differentiation, nonlinear programming, and control-oriented numerical optimization.
+- `tensorflow` for machine learning sections, differentiable models, training loops, and neural-network examples.
+- `python-control` for control or systems topics.
+- `numpy`, `scipy`, for plotting or where they support arrays, numerical checks, or visualization.
 
 ---
 
@@ -107,67 +144,52 @@ optimal-control-ml-notebooks/
 
 Every notebook follows a consistent lesson architecture:
 
-| Cell | Type     | Content |
-|------|----------|---------|
-| 1    | Markdown | Section number and title |
-| 2    | Markdown | Core equation(s) |
-| 3    | Markdown | Theoretical explanation |
-| 4    | Markdown | Numerical example with intermediate steps |
-| 5    | Code     | Minimal implementation |
-| 6    | Code     | Optional advanced analysis or visualization |
-| 7    | Markdown | Optional extended theory or variants |
-| 8    | Markdown | References + Previous / Next links |
-
-Notebooks are sequentially linked — each one points to the previous and next in the series.
+| Cell | Type     | Content                                                                          |
+| ---- | -------- | -------------------------------------------------------------------------------- |
+| 1    | Markdown | Section number and title                                                         |
+| 2    | Markdown | Core mathematical definition or equation                                         |
+| 3    | Markdown | Theoretical explanation and symbol interpretation                                |
+| 4    | Markdown | Numerical example with intermediate steps                                        |
+| 5    | Code     | `sympy` implementation first, with domain-specific equivalent code when useful |
+| 6    | Code     | Optional figures, advanced analysis, or visualization                            |
+| 7    | Markdown | Optional extended theory or variants                                             |
+| 8    | Markdown | References + Previous / Next links                                               |
 
 ---
 
 ## Current Progress
 
-| Section | Topic | Notebooks | Status |
-|---------|-------|-----------|--------|
-| 01 Foundations / 01 Linear Algebra | Prerequisites | 3 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Vectors | 9 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Matrices | 20 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Computational Linear Algebra | 6 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Geometrical Aspects | 17 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Linear Transformations | 14 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Theoretical Linear Algebra | 31 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Coordinate Transformations | 10 | ✅ Available |
-| 01 Foundations / 01 Linear Algebra | Multilinear Algebra and Tensors | 13 | ✅ Available |
-| 01 Foundations / 02–06 | Probability, Calculus, Variations, Differential Equations, Integral Transforms | 0 | 📋 Planned |
-| 02 Dynamics | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian | 0 | 📋 Planned |
-| 03 Optimization / 01 Unconstrained Optimization | Nonlinear programming, Chapter 1-style unconstrained methods | 30 | ✅ Available |
-| 03 Optimization / 02 Convex Optimization | Boyd and Vandenberghe-style convex optimization sequence | 106 | ✅ Available |
-| 03 Optimization / 03 Lagrange Multiplier Theory | Equality multipliers, KKT, Fritz John, constraint qualifications, duality | 17 | ✅ Available |
-| 03 Optimization / 04–06 | Lagrange multiplier algorithms, duality and convex programming, dual methods | 0 | 📋 Planned |
-| 04 Optimal Control | Controllability, estimation, LQR, LQG, trajectory optimization, MPC, robust control, hybrid systems, PDE-constrained optimal control | 0 | 📋 Planned |
-| 05 Machine Learning | Core modules | 0 | 📋 Planned |
-| 07 Reinforcement Learning | Core modules | 0 | 📋 Planned |
-| A1 OOP | Object-oriented principles and design patterns | 13 | ✅ Available |
-| A2 LLVM Compilers | Compiler foundations, LLVM IR, passes, optimization, MLIR | 16 | ✅ Available |
-| A3 Performance and Systems | CPU performance, vectorization, parallelism, profiling | 9 | ✅ Available |
-| A4 ML Infrastructure | ML compilers, framework integration, runtime topics, benchmarking | 12 | ✅ Available |
-| A5 Interview Katas | OOP and machine-learning infrastructure katas | 28 | ✅ Available |
+| Section                                         | Topic                                                                                                                                | Notebooks | Status       |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------- | ------------ |
+| 01 Foundations / 01 Linear Algebra              | Prerequisites                                                                                                                        | 3         | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Vectors                                                                                                                              | 9         | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Matrices                                                                                                                             | 20        | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Computational Linear Algebra                                                                                                         | 6         | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Geometrical Aspects                                                                                                                  | 17        | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Linear Transformations                                                                                                               | 14        | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Theoretical Linear Algebra                                                                                                           | 31        | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Coordinate Transformations                                                                                                           | 10        | ✅ Available |
+| 01 Foundations / 01 Linear Algebra              | Multilinear Algebra and Tensors                                                                                                      | 13        | ✅ Available |
+| 01 Foundations / 02–06                         | Probability, Calculus, Variations, Differential Equations, Integral Transforms                                                       | 0         | 📋 Planned   |
+| 02 Dynamics                                     | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian                                                                               | 0         | 📋 Planned   |
+| 03 Optimization / 01 Unconstrained Optimization | Nonlinear programming, Chapter 1-style unconstrained methods                                                                         | 30        | ✅ Available |
+| 03 Optimization / 02 Convex Optimization        | Boyd and Vandenberghe-style convex optimization sequence                                                                             | 106       | ✅ Available |
+| 03 Optimization / 03 Lagrange Multiplier Theory | Equality multipliers, KKT, Fritz John, constraint qualifications, duality                                                            | 17        | ✅ Available |
+| 03 Optimization / 04–06                        | Lagrange multiplier algorithms, duality and convex programming, dual methods                                                         | 0         | 📋 Planned   |
+| 04 Optimal Control                              | Controllability, estimation, LQR, LQG, trajectory optimization, MPC, robust control, hybrid systems, PDE-constrained optimal control | 0         | 📋 Planned   |
+| 05 Machine Learning                             | Core modules                                                                                                                         | 0         | 📋 Planned   |
+| 07 Reinforcement Learning                       | Core modules                                                                                                                         | 0         | 📋 Planned   |
+| A1 OOP                                          | Object-oriented principles and design patterns                                                                                       | 13        | ✅ Available |
+| A2 LLVM Compilers                               | Compiler foundations, LLVM IR, passes, optimization, MLIR                                                                            | 16        | ✅ Available |
+| A3 Performance and Systems                      | CPU performance, vectorization, parallelism, profiling                                                                               | 9         | ✅ Available |
+| A4 ML Infrastructure                            | ML compilers, framework integration, runtime topics, benchmarking                                                                    | 12        | ✅ Available |
+| A5 Interview Katas                              | OOP and machine-learning infrastructure katas                                                                                        | 28        | ✅ Available |
 
 **Current Total: 354 notebooks**
 
 ---
 
-## Missing Prerequisite Notes
-
-The optimization notebooks now link to existing prerequisite notebooks where the repository already has coverage. A few foundational concepts still do not have dedicated prerequisite notebooks:
-
-| Concept area | Needed in optimization notebooks | Likely foundation location |
-|--------------|----------------------------------|----------------------------|
-| Differential calculus for optimization | Gradients, Hessians, directional derivatives, Taylor approximations, implicit-function and mean-value theorem tools, sensitivity derivatives, primal functions, and second-order optimality conditions in `03_Optimization/01_Unconstrained_Optimization`, `03_Optimization/02_Convex_Optimization/09_Unconstrained_Minimization`, `10_Equality_Constrained_Minimization`, `11_Interior_Point_Methods`, and `03_Optimization/03_Lagrange_Multiplier_Theory` | `01_Foundations/03_Calculus` |
-| Probability and statistics for convex estimation | Likelihoods, log-likelihoods, entropy, KL divergence, random variables, means, variances, covariance matrices, and hypothesis-testing terminology in `03_Optimization/02_Convex_Optimization/07_Statistical_Estimation` | `01_Foundations/02_Probability_and_Statistics` |
-| Convex-analysis and variational-geometry bridge topics | Subgradients, supporting hyperplanes, separating hyperplanes, epigraph reasoning, dual cones, polar cones, tangent cones, Farkas' lemma, quasiregularity, quasinormality, constraint qualifications, and semi-infinite active-gradient cones across `03_Optimization/02_Convex_Optimization/02_Convex_Sets`, `03_Convex_Functions`, `05_Duality`, and `03_Optimization/03_Lagrange_Multiplier_Theory` | Either remain in `03_Optimization/02_Convex_Optimization` or become a future foundations-level convex-analysis bridge |
-
----
-
-# Getting Started 
-
+# Getting Started
 
 > [!IMPORTANT]
 > **You don't need to install anything to explore this hub.**
@@ -175,34 +197,40 @@ The optimization notebooks now link to existing prerequisite notebooks where the
 
 > The setup guide below is **only** for those who want to **run the Python code**, **modify notebooks**, or **experiment locally**. And assumes **no prior developer setup** and walks through everything from scratch.
 
-
 ## 1. Install Git
 
 Git is required to download (clone) the repository.
 
 ### macOS
-1. Open Terminal  
+
+1. Open Terminal
 2. Run:
+
 ```bash
 git --version
 ```
+
 If Git is not installed, install via:
+
 ```bash
 xcode-select --install
 ```
 
 ### Windows
-1. Go to: https://git-scm.com/download/win  
-2. Download and install with default settings  
-3. Restart terminal after install  
+
+1. Go to: https://git-scm.com/download/win
+2. Download and install with default settings
+3. Restart terminal after install
 
 ### Linux (Ubuntu)
+
 ```bash
 sudo apt update
 sudo apt install git
 ```
 
 Verify:
+
 ```bash
 git --version
 ```
@@ -218,10 +246,13 @@ During installation on Windows:
 ✔ Check **"Add Python to PATH"**
 
 Verify installation:
+
 ```bash
 python --version
 ```
+
 or
+
 ```bash
 python3 --version
 ```
@@ -250,11 +281,13 @@ python -m venv .venv
 ### Activate it
 
 #### macOS / Linux
+
 ```bash
 source .venv/bin/activate
 ```
 
 #### Windows (PowerShell)
+
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
@@ -283,6 +316,7 @@ Open VS Code → Extensions tab → install:
 - Jupyter (Microsoft)
 
 Or install from terminal:
+
 ```bash
 code --install-extension ms-python.python
 code --install-extension ms-toolsai.jupyter
@@ -291,6 +325,7 @@ code --install-extension ms-toolsai.jupyter
 ## 8. Open the Project
 
 From inside the repo folder:
+
 ```bash
 code .
 ```
@@ -367,11 +402,12 @@ git pull
 ## Deactivate Environment
 
 When finished:
+
 ```bash
 deactivate
 ```
 
-### (Additional) Tutorial 
+### (Additional) Tutorial
 
 VS Code + Jupyter setup walkthrough:
 

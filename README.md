@@ -418,5 +418,8 @@ https://www.youtube.com/watch?v=9FZzw9nF8Rg
 ## References so far
 
 - Savov, I. (2016). *No Bullshit Guide to Linear Algebra*
+- Fleisch, D. (2012). *A Student's Guide to Vectors and Tensors*
 - Aazi, M. (2024). *Mathematics For Machine Learning*
 - Rozycki, P. (2020). *Computational Mechanics Course Notes, École Centrale de Nantes*
+- Bertsekas, D. P. (1999). *Nonlinear Programming*
+- Boyd, S., & Vandenberghe, L. (2004). *Convex Optimization*

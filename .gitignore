@@ -1,8 +1,13 @@
 /Literature
-.venv
-.github/
+
+# Hidden local tool directories are local-only by default.
+.*/
+!/.github/
+!/.github/**
 
 # Markdown notes and local agent guidance are local-only by default.
 *.md
 !README.md
 !**/README.md
+!/.github/
+!/.github/**

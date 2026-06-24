@@ -1,8 +1,6 @@
 # Optimal Control and Machine Learning — Jupyter Learning Hub
 
-A structured, notebook-first learning path for the mathematics and computation behind modern control, optimization, machine learning, and reinforcement learning.
-
-This repository is built like an executable textbook. Each notebook introduces one idea, states the governing mathematics, works through a concrete numerical example, and then implements the same calculation in Python. The goal is to make advanced topics readable from first principles without separating theory from computation.
+Notebook learning path for mathematics and computation behind modern control, optimization, machine learning, and reinforcement learning.
 
 ## About Me
 
@@ -10,22 +8,22 @@ Hi, I am a software and simulation engineer with about 9 years of experience acr
 
 ## Why This Repository
 
-I learn best by building things. If these notes help someone else along the way, even better.
+I learn best by building. If these notes help someone else along the way, even better.
 
 This project is for readers who want a coherent path from linear algebra and calculus foundations into optimization, optimal control, ML systems, and reinforcement learning. It is especially useful if you want to see how equations become working code, how prerequisite ideas connect across subjects, and how canonical textbook material can be turned into small, executable lessons.
 
-The curriculum is designed for:
+Designed for:
 
 - students building a serious mathematical foundation for control, ML, or robotics
 - engineers who want executable refreshers instead of isolated formulas
 - self-learners who prefer a sequential and wiki-like path with previous/next navigation
 - researchers and practitioners who want compact notebooks grounded in source material
 
-The repository is not a software framework. It is a learning hub: notebooks are written to teach the calculation, expose intermediate steps, and connect each lesson to the surrounding curriculum.
+This is not a software framework. Its a learning hub: notebooks are written to teach the calculation, expose intermediate steps, and connect each lesson to others.
 
-## How The Notebooks Teach
+## How Notebooks Teach
 
-Each notebook follows the same arch:
+Each notebook follows same arch:
 
 - a numbered title that matches the folder hierarchy
 - a mathematical definition or main equation at the top
@@ -195,7 +193,7 @@ Every notebook follows a consistent lesson architecture:
 > **You don't need to install anything to explore this hub.**
 > All notebooks render directly on GitHub — Just **leave a Star** and enjoy the ride! 🚀
 
-> The setup guide below is **only** for those who want to **run the Python code**, **modify notebooks**, or **experiment locally**. And assumes **no prior developer setup** and walks through everything from scratch.
+> The setup guide below is **only** for those who want to **run the Python code**, **modify notebooks**, or **experiment locally**. Assumes **no prior developer setup** and walks through everything from scratch.
 
 ## 1. Install Git
 

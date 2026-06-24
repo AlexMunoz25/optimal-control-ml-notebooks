@@ -9,7 +9,9 @@
       "Bash(.venv/bin/python -c \"import sympy,casadi,numpy,matplotlib; print\\('sympy',sympy.__version__,'casadi',casadi.__version__\\)\")",
       "Bash(.venv/bin/python -c \"import casadi as ca; x=ca.SX.sym\\('x',2\\); f=0.5*ca.dot\\(x,ca.DM\\([[20,0],[0,1]]\\)@x\\); g=ca.gradient\\(f,x\\); F=ca.Function\\('g',[x],[g]\\); print\\(F\\(ca.DM\\([1,1]\\)\\)\\)\")",
       "Bash(grep '\\\\.ipynb$')",
-      "Bash(tee /tmp/changed.txt)"
+      "Bash(tee /tmp/changed.txt)",
+      "Bash(grep -rho --include='*.ipynb' '\\\\*\\\\*[A-Za-z]* `casadi` implementation' 03_Optimization)",
+      "Bash(.venv/bin/python -)"
     ]
   }
 }

@@ -14,10 +14,6 @@ I learn best by building things. If these notes help someone else along the way,
 optimal-control-ml-notebooks/
 │
 ├── README.md
-├── AGENTS.md
-├── CONTEXT.md
-├── CODING-RULES.md
-├── ARCH-RULES.md
 ├── requirements.txt
 │
 ├── 01_Foundations/                                           ← 123 notebooks
@@ -109,7 +105,7 @@ optimal-control-ml-notebooks/
 
 ## Notebook Format
 
-Every notebook follows the architecture defined in `ARCH-RULES.md`:
+Every notebook follows a consistent lesson architecture:
 
 | Cell | Type     | Content |
 |------|----------|---------|

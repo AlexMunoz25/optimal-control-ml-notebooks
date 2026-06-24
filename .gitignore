@@ -1,3 +1,8 @@
 /Literature
 .venv
 .github/
+
+# Markdown notes and local agent guidance are local-only by default.
+*.md
+!README.md
+!**/README.md

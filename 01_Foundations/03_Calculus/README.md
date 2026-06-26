@@ -2,7 +2,7 @@
 
 Calculus foundation track for `01_Foundations`. This file is the canonical plan for the track: it fixes the subfolders, the notebook sequence, the section numbering, the literature mapping, and the computational stack so future agents can author conforming notebooks without re-deriving the design.
 
-> **Status:** architecture only. No notebooks have been created yet. Build them in the order below.
+> **Status:** complete — all 60 notebooks authored against the canonical source (Strang, *Calculus* Volumes 1–3, OpenStax), executed, and validated. The architecture below is the canonical record of the track.
 
 Authoring rules are **not** restated here. Every notebook must follow the root guidance exactly:
 [AGENTS.md](../../AGENTS.md) · [CONTEXT.md](../../CONTEXT.md) · [CODING-RULES.md](../../CODING-RULES.md) · [ARCH-RULES.md](../../ARCH-RULES.md) (mandatory 8-cell structure, §8.4 *Foundations* rules apply).
@@ -168,16 +168,23 @@ The most applied, repository-specific capstone: the derivative machinery the Cas
 
 ## Literature mapping
 
-Primary canonical source for the track:
+Primary canonical source for the track — **Strang, G. (2016). *Calculus* Volumes 1–3 (OpenStax).** The notebooks preserve its terminology, notation, definitions, theorems, and worked examples, adapting only the order to this curriculum. In-repo conversions live under `Literature/01 - Foundations/Calculus/Strang (2016) - Calculus Volume {1,2,3} - Openstax MIT/` (Markdown + figures, audited per ARCH-RULES §9). Chapter → subfolder mapping:
 
-- **Aazi, M. (2024). *Mathematics For Machine Learning* — Chapter 3, Calculus.** Maps to subfolders 1.3.1–1.3.6. (The in-repo folder `Literature/01 - Foundations/Aazi 2024 - Mathematics For Machine Learning/Chapter03_Calculus` is currently an empty placeholder — the chapter still needs converting before notebook authoring, per ARCH-RULES §9.)
+| Subfolder | Strang chapter(s) |
+|-----------|-------------------|
+| 1.3.1 `Limits_and_Continuity` | Vol 1 Ch 2 (Limits); EVT from Vol 1 Ch 4.3 |
+| 1.3.2 `Single_Variable_Differentiation` | Vol 1 Ch 3 (Derivatives), Ch 4 (Applications of Derivatives: MVT 4.4, maxima/minima 4.3, Newton's method 4.9) |
+| 1.3.3 `Single_Variable_Integration` | Vol 1 Ch 5 (Integration); Vol 2 Ch 1 (Integration), Ch 3 (Techniques of Integration) |
+| 1.3.4 `Sequences_Series_and_Taylor_Approximation` | Vol 2 Ch 5 (Sequences and Series), Ch 6 (Power Series) |
+| 1.3.5 `Multivariable_Differential_Calculus` | Vol 3 Ch 4 (Differentiation of Functions of Several Variables) |
+| 1.3.6 `Multivariable_Integration_and_Vector_Calculus` | Vol 3 Ch 5 (Multiple Integration), Ch 6 (Vector Calculus) |
 
-Supplementary calculus rigor (already in `Literature/`, optimization-oriented):
+Supplementary rigor for the matrix-calculus / automatic-differentiation capstone (1.3.7), which Strang does not cover, and for the optimization-facing parts of 1.3.5 (already in `Literature/`):
 
-- **Bertsekas, D. P. (1999). *Nonlinear Programming* — Appendix A.5 (Derivatives).** Gradient, Jacobian, Hessian, multivariable chain rule, mean value theorem, second-order (Taylor) expansion, implicit function theorem. Maps to subfolders 1.3.5 and 1.3.7.
-- **Boyd, S., & Vandenberghe, L. (2004). *Convex Optimization* — Appendix A.4 (Derivatives).** Derivative/Jacobian, gradient, first- and second-order approximation, chain rule, Hessian, matrix-calculus examples (quadratic form, `log det`). Maps to subfolders 1.3.5 and 1.3.7.
+- **Bertsekas, D. P. (1999). *Nonlinear Programming* — Appendix A.5 (Derivatives).** Gradient, Jacobian, Hessian, multivariable chain rule, mean value theorem, second-order (Taylor) expansion, implicit function theorem.
+- **Boyd, S., & Vandenberghe, L. (2004). *Convex Optimization* — Appendix A.4 (Derivatives).** Derivative/Jacobian, gradient, first- and second-order approximation, chain rule, Hessian, matrix-calculus examples (quadratic form, `log det`).
 
-Per ARCH-RULES §10, notebook explanations stay author-neutral; books appear only in the Cell 8 references with public URLs (Aazi MML, `athenasc.com` for Bertsekas, `web.stanford.edu/~boyd/cvxbook` for Boyd), never as local `Literature/` links.
+Per ARCH-RULES §10, notebook explanations stay author-neutral; books appear only in the Cell 8 references with public URLs (`openstax.org/details/books/calculus-volume-{1,2,3}` for Strang, `athenasc.com` for Bertsekas, `web.stanford.edu/~boyd/cvxbook` for Boyd), never as local `Literature/` links.
 
 ## Computational stack
 
@@ -185,7 +192,7 @@ Follow CODING-RULES §8 (SymPy-first, then a domain-centric equivalent). For thi
 
 - **SymPy first**, always: `sp.limit`, `sp.diff`, `sp.integrate`, `sp.series`, `Matrix.jacobian`, `sp.hessian` produce the exact, textbook-style intermediate steps.
 - **CasADi equivalent** in any cell that *evaluates a derivative* (gradient/Jacobian/Hessian/partial of an explicit function), per the established `03_Optimization` pattern: `ca.gradient` / `ca.jacobian` / `ca.hessian`, with `ca.substitute`/`ca.evalf` to match the SymPy numbers. The `07_Matrix_Calculus_and_Automatic_Differentiation` subfolder is where CasADi forward/reverse AD is the natural domain workflow.
-- **TensorFlow equivalent** for the automatic-differentiation notebooks (`1.3.7.7`–`1.3.7.9`): `tf.GradientTape` for reverse-mode/backprop, `tf.autodiff.ForwardAccumulator` for forward-mode.
+- **CasADi is the executed AD equivalent** for the automatic-differentiation notebooks (`1.3.7.7`–`1.3.7.9`): `ca.Function` graphs with `forward`/`reverse` and `ca.jacobian` realize forward- and reverse-mode AD directly, matching the repository's installed stack. (TensorFlow's `tf.GradientTape` / `tf.autodiff.ForwardAccumulator` are the production analogs but are not part of the executed environment here.)
 - **NumPy / SciPy / Matplotlib** are supporting tools only — quadrature checks (`07_numerical_integration`), finite-difference comparisons, and any visualization (e.g. tangent lines, level sets, gradient fields). They must not replace SymPy for the from-scratch computation.
 
 ## Notebook structure reminder

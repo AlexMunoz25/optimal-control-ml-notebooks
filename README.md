@@ -63,7 +63,14 @@ optimal-control-ml-notebooks/
 │   │   ├── 08_Coordinate_Transformations/                    (10 notebooks)
 │   │   └── 09_Multilinear_Algebra_and_Tensors/               (13 notebooks)
 │   ├── 02_Probability_and_Statistics/                        ← planned
-│   ├── 03_Calculus/                                          ← planned
+│   ├── 03_Calculus/                                          (60 notebooks)
+│   │   ├── 01_Limits_and_Continuity/                         (7 notebooks)
+│   │   ├── 02_Single_Variable_Differentiation/              (11 notebooks)
+│   │   ├── 03_Single_Variable_Integration/                   (8 notebooks)
+│   │   ├── 04_Sequences_Series_and_Taylor_Approximation/     (6 notebooks)
+│   │   ├── 05_Multivariable_Differential_Calculus/          (12 notebooks)
+│   │   ├── 06_Multivariable_Integration_and_Vector_Calculus/ (7 notebooks)
+│   │   └── 07_Matrix_Calculus_and_Automatic_Differentiation/ (9 notebooks)
 │   ├── 04_Calculus_of_Variations/                            ← planned
 │   ├── 05_DIfferential_Equations/                            ← planned
 │   └── 06_Integral_Transforms/                               ← planned
@@ -168,7 +175,8 @@ Every notebook follows a consistent lesson architecture:
 | 01 Foundations / 01 Linear Algebra              | Theoretical Linear Algebra                                                                                                           | 31        | ✅ Available |
 | 01 Foundations / 01 Linear Algebra              | Coordinate Transformations                                                                                                           | 10        | ✅ Available |
 | 01 Foundations / 01 Linear Algebra              | Multilinear Algebra and Tensors                                                                                                      | 13        | ✅ Available |
-| 01 Foundations / 02–06                         | Probability, Calculus, Variations, Differential Equations, Integral Transforms                                                       | 0         | 📋 Planned   |
+| 01 Foundations / 03 Calculus                    | Limits, differentiation, integration, series/Taylor, multivariable calculus, vector calculus, matrix calculus and automatic differentiation | 60        | ✅ Available |
+| 01 Foundations / 02, 04–06                      | Probability, Variations, Differential Equations, Integral Transforms                                                                  | 0         | 📋 Planned   |
 | 02 Dynamics                                     | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian                                                                               | 0         | 📋 Planned   |
 | 03 Optimization / 01 Unconstrained Optimization | Nonlinear programming, Chapter 1-style unconstrained methods                                                                         | 30        | ✅ Available |
 | 03 Optimization / 02 Convex Optimization        | Boyd and Vandenberghe-style convex optimization sequence                                                                             | 106       | ✅ Available |

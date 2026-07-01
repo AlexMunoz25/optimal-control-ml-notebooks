@@ -81,13 +81,16 @@ optimal-control-ml-notebooks/
 │   ├── 03_Modeling_using_Bond_Graph/                         ← planned
 │   └── 04_Modeling_using_Port_Hamiltonian/                   ← planned
 │
-├── 03_Optimization/                                          ← 128 notebooks
-│   ├── 01_Optimization_Fundamentals/                         (10 notebooks)
-│   ├── 02_Convex_Analysis/                                   (24 notebooks)
-│   ├── 03_Convex_Problem_Classes/                            (19 notebooks)
-│   ├── 04_Constraint_Theory_and_Duality/                     (24 notebooks)
-│   ├── 05_Unconstrained_Algorithms/                          (32 notebooks)
-│   └── 06_Constrained_Algorithms/                            (19 notebooks)
+├── 03_Optimization/                                          ← 154 notebooks
+│   ├── 01_Optimization_Fundamentals/                         (6 notebooks)
+│   ├── 02_Continuous_Optimization/                           (6 notebooks)
+│   ├── 03_Convex_Optimization/                               (52 notebooks)
+│   ├── 04_Convex_Problem_Classes/                            (14 notebooks)
+│   ├── 05_Nonlinear_Programming/                             (13 notebooks)
+│   ├── 06_Discrete_and_Combinatorial_Optimization/           (6 notebooks)
+│   ├── 07_Stochastic_and_Robust_Optimization/                (4 notebooks)
+│   ├── 08_Global_and_Derivative_Free_Optimization/           (5 notebooks)
+│   └── 09_Algorithms/                                        (48 notebooks)
 │
 ├── 04_Optimal_Control/                                       ← planned
 │   ├── 01_Controllability_and_Observability/                 ← planned
@@ -167,12 +170,15 @@ Every notebook follows a consistent lesson architecture:
 | 01 Foundations / 03 Calculus                    | Limits, differentiation, integration, series/Taylor, multivariable calculus, vector calculus, matrix calculus and automatic differentiation | 60        | ✅ Available |
 | 01 Foundations / 02, 04–06                      | Probability, Variations, Differential Equations, Integral Transforms                                                                  | 0         | 📋 Planned   |
 | 02 Dynamics                                     | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian                                                                               | 0         | 📋 Planned   |
-| 03 Optimization / 01 Optimization Fundamentals   | Problem formulation, optimality conditions, existence, sensitivity, convex modeling motivation                                       | 10        | ✅ Available |
-| 03 Optimization / 02 Convex Analysis             | Convex sets, convex functions, projection on convex sets                                                                            | 24        | ✅ Available |
-| 03 Optimization / 03 Convex Problem Classes      | LP, QP, SOCP, SDP, conic and geometric programming, least-squares/regularization, maximum likelihood, SVM                            | 19        | ✅ Available |
-| 03 Optimization / 04 Constraint Theory & Duality | Lagrange multipliers, KKT, Fritz John, constraint qualifications, Farkas, Lagrangian duality                                         | 24        | ✅ Available |
-| 03 Optimization / 05 Unconstrained Algorithms    | Descent, gradient/step size, convergence & conditioning, Newton, quasi-Newton, CG, Gauss-Newton, self-concordance                    | 32        | ✅ Available |
-| 03 Optimization / 06 Constrained Algorithms      | Equality-constrained Newton, KKT systems, barrier and interior-point methods                                                         | 19        | ✅ Available |
+| 03 Optimization / 01 Optimization Fundamentals   | Mathematical programming, objective functions, decision variables, feasible sets, local vs global optima, problem classification     | 6         | ✅ Available |
+| 03 Optimization / 02 Continuous Optimization     | Unconstrained, constrained, smooth and nonsmooth optimization, nonlinear programming overview                                        | 6         | ✅ Available |
+| 03 Optimization / 03 Convex Optimization         | Convex sets, convex functions, convex problems, duality, KKT conditions, interior-point methods                                      | 52        | ✅ Available |
+| 03 Optimization / 04 Convex Problem Classes      | LP, QP, QCQP, SOCP, SDP, geometric and conic programming, applied convex programs                                                    | 14        | ✅ Available |
+| 03 Optimization / 05 Nonlinear Programming       | General/convex/nonconvex NLP, sequential quadratic programming, augmented Lagrangian, penalty and barrier methods                    | 13        | ✅ Available |
+| 03 Optimization / 06 Discrete & Combinatorial    | Integer, binary, mixed-integer linear/quadratic/nonlinear programming, combinatorial optimization                                    | 6         | ✅ Available |
+| 03 Optimization / 07 Stochastic & Robust         | Stochastic programming, chance-constrained, robust and distributionally robust optimization                                          | 4         | ✅ Available |
+| 03 Optimization / 08 Global & Derivative-Free    | Global optimization, branch and bound, Bayesian optimization, evolutionary and derivative-free methods                               | 5         | ✅ Available |
+| 03 Optimization / 09 Algorithms                  | Gradient descent, Newton, quasi-Newton, conjugate gradient, active-set, interior-point, first-order methods                          | 48        | ✅ Available |
 | 04 Optimal Control                              | Controllability, estimation, LQR, LQG, trajectory optimization, MPC, robust control, hybrid systems, PDE-constrained optimal control | 0         | 📋 Planned   |
 | 05 Machine Learning                             | Core modules                                                                                                                         | 0         | 📋 Planned   |
 | 07 Reinforcement Learning                       | Core modules                                                                                                                         | 0         | 📋 Planned   |
@@ -182,7 +188,7 @@ Every notebook follows a consistent lesson architecture:
 | A4 ML Infrastructure                            | ML compilers, framework integration, runtime topics, benchmarking                                                                    | 12        | ✅ Available |
 | A5 Interview Katas                              | OOP and machine-learning infrastructure katas                                                                                        | 28        | ✅ Available |
 
-**Current Total: 329 notebooks**
+**Current Total: 415 notebooks**
 
 ---
 

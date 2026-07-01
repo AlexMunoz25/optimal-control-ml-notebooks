@@ -81,24 +81,13 @@ optimal-control-ml-notebooks/
 │   ├── 03_Modeling_using_Bond_Graph/                         ← planned
 │   └── 04_Modeling_using_Port_Hamiltonian/                   ← planned
 │
-├── 03_Optimization/                                          ← 153 notebooks
-│   ├── 01_Unconstrained_Optimization/                        (30 notebooks)
-│   ├── 02_Convex_Optimization/                               (106 notebooks)
-│   │   ├── 01_Introduction/                                  (4 notebooks)
-│   │   ├── 02_Convex_Sets/                                   (11 notebooks)
-│   │   ├── 03_Convex_Functions/                              (12 notebooks)
-│   │   ├── 04_Convex_Optimization_Problems/                  (12 notebooks)
-│   │   ├── 05_Duality/                                       (10 notebooks)
-│   │   ├── 06_Approximation_and_Fitting/                     (10 notebooks)
-│   │   ├── 07_Statistical_Estimation/                        (10 notebooks)
-│   │   ├── 08_Geometric_Problems/                            (10 notebooks)
-│   │   ├── 09_Unconstrained_Minimization/                    (8 notebooks)
-│   │   ├── 10_Equality_Constrained_Minimization/             (8 notebooks)
-│   │   └── 11_Interior_Point_Methods/                        (11 notebooks)
-│   ├── 03_Lagrange_Multiplier_Theory/                        (17 notebooks)
-│   ├── 04_Lagrange_Multiplier_Algorithms/                    ← planned
-│   ├── 05_Duality_and_Convex_Programming/                    ← planned
-│   └── 06_Dual_Methods/                                      ← planned
+├── 03_Optimization/                                          ← 128 notebooks
+│   ├── 01_Optimization_Fundamentals/                         (10 notebooks)
+│   ├── 02_Convex_Analysis/                                   (24 notebooks)
+│   ├── 03_Convex_Problem_Classes/                            (19 notebooks)
+│   ├── 04_Constraint_Theory_and_Duality/                     (24 notebooks)
+│   ├── 05_Unconstrained_Algorithms/                          (32 notebooks)
+│   └── 06_Constrained_Algorithms/                            (19 notebooks)
 │
 ├── 04_Optimal_Control/                                       ← planned
 │   ├── 01_Controllability_and_Observability/                 ← planned
@@ -178,10 +167,12 @@ Every notebook follows a consistent lesson architecture:
 | 01 Foundations / 03 Calculus                    | Limits, differentiation, integration, series/Taylor, multivariable calculus, vector calculus, matrix calculus and automatic differentiation | 60        | ✅ Available |
 | 01 Foundations / 02, 04–06                      | Probability, Variations, Differential Equations, Integral Transforms                                                                  | 0         | 📋 Planned   |
 | 02 Dynamics                                     | Causal/Acausal, Lagrange, Bond Graph, Port-Hamiltonian                                                                               | 0         | 📋 Planned   |
-| 03 Optimization / 01 Unconstrained Optimization | Nonlinear programming, Chapter 1-style unconstrained methods                                                                         | 30        | ✅ Available |
-| 03 Optimization / 02 Convex Optimization        | Boyd and Vandenberghe-style convex optimization sequence                                                                             | 106       | ✅ Available |
-| 03 Optimization / 03 Lagrange Multiplier Theory | Equality multipliers, KKT, Fritz John, constraint qualifications, duality                                                            | 17        | ✅ Available |
-| 03 Optimization / 04–06                        | Lagrange multiplier algorithms, duality and convex programming, dual methods                                                         | 0         | 📋 Planned   |
+| 03 Optimization / 01 Optimization Fundamentals   | Problem formulation, optimality conditions, existence, sensitivity, convex modeling motivation                                       | 10        | ✅ Available |
+| 03 Optimization / 02 Convex Analysis             | Convex sets, convex functions, projection on convex sets                                                                            | 24        | ✅ Available |
+| 03 Optimization / 03 Convex Problem Classes      | LP, QP, SOCP, SDP, conic and geometric programming, least-squares/regularization, maximum likelihood, SVM                            | 19        | ✅ Available |
+| 03 Optimization / 04 Constraint Theory & Duality | Lagrange multipliers, KKT, Fritz John, constraint qualifications, Farkas, Lagrangian duality                                         | 24        | ✅ Available |
+| 03 Optimization / 05 Unconstrained Algorithms    | Descent, gradient/step size, convergence & conditioning, Newton, quasi-Newton, CG, Gauss-Newton, self-concordance                    | 32        | ✅ Available |
+| 03 Optimization / 06 Constrained Algorithms      | Equality-constrained Newton, KKT systems, barrier and interior-point methods                                                         | 19        | ✅ Available |
 | 04 Optimal Control                              | Controllability, estimation, LQR, LQG, trajectory optimization, MPC, robust control, hybrid systems, PDE-constrained optimal control | 0         | 📋 Planned   |
 | 05 Machine Learning                             | Core modules                                                                                                                         | 0         | 📋 Planned   |
 | 07 Reinforcement Learning                       | Core modules                                                                                                                         | 0         | 📋 Planned   |
@@ -191,7 +182,7 @@ Every notebook follows a consistent lesson architecture:
 | A4 ML Infrastructure                            | ML compilers, framework integration, runtime topics, benchmarking                                                                    | 12        | ✅ Available |
 | A5 Interview Katas                              | OOP and machine-learning infrastructure katas                                                                                        | 28        | ✅ Available |
 
-**Current Total: 354 notebooks**
+**Current Total: 329 notebooks**
 
 ---
 

@@ -1,4 +1,5 @@
 /Literature
+/References
 
 # Hidden local tool directories are local-only by default.
 .*/
